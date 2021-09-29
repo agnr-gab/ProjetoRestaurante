@@ -38,6 +38,10 @@ public class Prato {
         return listaIngrediente;
     }
 
+    public void setListaIngrediente(List<Ingredientes> listaIngrediente) {
+        this.listaIngrediente = listaIngrediente;
+    }
+
     public void adicionarIngrediente(Ingredientes acompanhamentos) {
         listaIngrediente.add(acompanhamentos);
     }

@@ -15,6 +15,7 @@ public class Sistema {
         String nomePrato = entradaDados("Digite o nome do prato que deseja cadastrar:").nextLine();
         double valorPrato = entradaDados("Digite o preço do prato:").nextDouble();
 
-
+        Prato prato1 = new Prato(nomePrato, valorPrato);
+        return prato1;
     }
 }

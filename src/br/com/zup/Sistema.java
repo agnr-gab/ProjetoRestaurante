@@ -18,17 +18,25 @@ public class Sistema {
         double valorPrato = entradaDados("Digite o preço do prato:").nextDouble();
 
         Prato prato1 = new Prato(nomePrato, valorPrato);
-
         prato1.setNomePrato(nomePrato);
         prato1.setValorPrato(valorPrato);
-
         return prato1;
     }
 
-    public static List<Ingredientes> retornoIngrediente() {
+    public static Ingredientes cadastrarIngredientes() {
         String escolhaIngredientes = entradaDados("Digite os ingredientes que deseja acrescentar!").nextLine();
-        Ingredientes ingredientesPrato = new Ingredientes(escolhaIngredientes);
-        List<Ingredientes> retornoIngrediente = new ArrayList<>();
-        return retornoIngrediente;
+
+        Ingredientes novoIngrediente = new Ingredientes();
+        novoIngrediente.setEscolhaIngredientes(escolhaIngredientes);
+        return novoIngrediente;
+    }
+
+    public static List<Ingredientes> retornoIngredientes() {
+        List<Ingredientes> retornoIngredientes = new ArrayList<>();
+        int qtdIngredientes = entradaDados("Digite a quantidade de acompanhamentos que deseja adicionar ao seu prato principal!").nextInt();
+        for (int contador = 0; contador < qtdIngredientes; contador++){
+            retornoIngredientes.add(cadastrarIngredientes());
+        }
+        return retornoIngredientes;
     }
 }
